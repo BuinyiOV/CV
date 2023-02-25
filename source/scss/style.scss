@@ -1,0 +1,817 @@
+@import "_nullstyle";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+//Roboto
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+//"Fira Sans"
+@import "_keyframes";
+
+@import "_colorbuttons";
+
+//-----------------------------------------------------------------------------------------------------------
+html {
+	color: white;
+	font-family: roboto;
+}
+
+@media(max-width:600px) {
+	html {
+		font-size: 8px;
+	}
+}
+
+body {
+	background-color: rgb(226, 226, 226);
+}
+
+.wrap {
+	min-height: 100%;
+	background: linear-gradient(-90deg, #00000000, #131313, #131313);
+	background-size: 400% 400%;
+	-webkit-animation: backgroundgradient 15s ease infinite;
+	animation: backgroundgradient 15s ease infinite;
+}
+
+.lightgradient {
+	min-height: 100%;
+	background: linear-gradient(-90deg, #00000000, #e2e2e2, #e2e2e2);
+	background-size: 400% 400%;
+	-webkit-animation: backgroundgradient 15s ease infinite;
+	animation: backgroundgradient 15s ease infinite;
+}
+
+.container {
+	max-width: 90vw;
+	margin: 0 auto;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+h3 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-shadow: 0 0 5px white;
+	text-align: center;
+	line-height: 5rem;
+	color: white;
+	transition: all 1s ease 0s;
+}
+
+a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-weight: 700;
+	color: white;
+	text-shadow: 0 0 5px white;
+	transition: all 1s ease 0s;
+}
+
+span {
+	color: white;
+	font-weight: 700;
+	font-family: "Fira Sans";
+}
+
+[class*="__title"] {
+	overflow: hidden;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 700;
+	color: #131313;
+	font-size: 20px;
+	min-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-shadow: 0 0 15px white, 0 0 15px white;
+	--borderWidth: 0.3rem;
+	background: none;
+	position: relative;
+	border-radius: calc(5 *var(--borderWidth));
+	transition: all 1s ease 0s;
+}
+
+[class*="__title"]:hover::after {
+	content: '';
+	position: absolute;
+	bottom: 0px; //calc(1 * var(--borderWidth));
+	height: var(--borderWidth);
+	width: 100%;
+	background: linear-gradient(90deg, #00000000 40%, #ffffff 50%, #000000 55%, #00000000 70%);
+	border-radius: calc(2 * var(--borderWidth));
+	z-index: 1;
+	-webkit-animation: animationleft 3s ease infinite;
+	animation: animationleft 3s ease infinite;
+	background-size: 300% 300%;
+}
+
+//header--------------------------------------------------------------------------------------------
+
+.header {
+	width: 100%;
+	display: flex;
+	min-height: 5rem;
+
+	&__name {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 700;
+		color: #131313;
+		font-size: 25px;
+		min-width: 15rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-shadow: 0 0 15px white, 0 0 15px white;
+		transition: all 1s ease 0s;
+
+		letter-spacing: 0.02em;
+		-webkit-animation: animationname 15s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite;
+		animation: animationname 15s cubic-bezier(0.550, 0.085, 0.680, 0.530) infinite;
+	}
+
+	&__contact {
+		flex: 1 0 auto;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	&__language {
+		min-width: 15rem;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		text-transform: uppercase;
+		font-size: 20px;
+	}
+
+	&__language a {
+		color: #131313;
+	}
+}
+
+@media(max-width:999.98px) {
+	.header {
+		flex-wrap: wrap;
+
+		&__name {
+			order: 1;
+			flex: 1 1 50%;
+			line-height: 50px;
+		}
+
+		&__contact {
+			order: 3;
+			flex: 1 1 100%;
+		}
+
+		&__language {
+			order: 2;
+			flex: 1 1 50%;
+			line-height: 50px;
+		}
+
+	}
+}
+
+.contact {
+
+	&__phone,
+	&__mail,
+	&__linkdin,
+	&__git {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: #5979ef00;
+		color: #ca030300;
+		font-size: 0;
+		text-shadow: 0 0 15px white, 0 0 15px white, 0 0 5px white;
+	}
+
+	&__phone,
+	&__mail {
+		transition: all 1s ease 0s;
+	}
+
+
+	&__phone:focus,
+	&__mail:focus,
+	&__linkdin:focus,
+	&__git:focus {
+		color: white;
+		font-size: 16px;
+	}
+}
+
+.contact img {
+	max-width: 30px;
+	filter: drop-shadow(#ffffff 0px 0px 3px);
+	transition: all 1s ease 0s;
+}
+
+@media(min-width:300px) {
+	.contact img {
+		max-width: 50px;
+	}
+}
+
+.language {
+
+	&__en,
+	&__ua,
+	&__pl {
+		transition: all 1s ease 0s;
+		text-transform: uppercase;
+	}
+
+	&__en:hover,
+	&__ua:hover,
+	&__pl:hover {
+		filter: drop-shadow(#ffffff 0px 0px 5px);
+	}
+}
+
+//up--------------------------------------------------------------------------------------------
+.up {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+
+	&__experience {
+		text-transform: capitalize;
+		order: 2;
+	}
+
+	&__experience,
+	&__works {
+		display: flex;
+		flex-direction: column;
+		min-width: 15rem;
+		font-size: 0;
+		flex: 1 1 15rem;
+		transition: all 1s ease 0s;
+	}
+
+	&__middle {
+		flex: 1 1 auto;
+		order: 1;
+	}
+
+	&__works {
+		order: 3;
+	}
+}
+
+@media(min-width:1000px) {
+	.up {
+		flex-direction: row;
+
+		&__experience {
+			order: 1;
+		}
+
+		&__experience:hover,
+		&__works:hover {
+			flex: 1 1 300%;
+		}
+
+		&__middle {
+			order: 2;
+		}
+
+		&__works {
+			order: 3;
+		}
+	}
+}
+
+//up experience--------------------------------------------------------------------------------------------
+.experience {
+
+	&__leader,
+	&__operator,
+	&__teacher,
+	&__owner {
+		border-right: 1px solid white;
+		border-bottom: 1px solid white;
+		padding-top: 1rem;
+		transition: all 1s ease 0s;
+		overflow: hidden;
+		--borderWidth: 0.3rem;
+		position: relative;
+		border-radius: calc(5 *var(--borderWidth));
+	}
+
+	&__leader p:nth-child(3),
+	&__operator p:nth-child(3),
+	&__teacher p:nth-child(3),
+	&__owner p:nth-child(3) {
+		padding: 0.8em 0.8em 0.8em;
+		font-family: "Fira Sans";
+		font-weight: 700;
+	}
+
+	&__leader p:last-child,
+	&__operator p:last-child,
+	&__teacher p:last-child,
+	&__owner p:last-child {
+		padding-bottom: 1em;
+	}
+
+	&__leader:hover,
+	&__operator:hover,
+	&__teacher:hover,
+	&__owner:hover {
+		font-size: 16px;
+		line-height: 1.2rem;
+	}
+
+	&__leader p:nth-child(2),
+	&__operator p:nth-child(2),
+	&__teacher p:nth-child(2),
+	&__owner p:nth-child(2) {
+		font-size: 18px;
+	}
+
+	&__leader p:nth-child(1),
+	&__leader p:nth-child(2),
+	&__operator p:nth-child(1),
+	&__operator p:nth-child(2),
+	&__teacher p:nth-child(1),
+	&__teacher p:nth-child(2),
+	&__owner p:nth-child(1),
+	&__owner p:nth-child(2) {
+		padding: 0 0.8em 0.8em;
+		font-family: "Fira Sans";
+		font-weight: 700;
+	}
+
+	&__leader p,
+	&__operator p,
+	&__teacher p,
+	&__owner p {
+		padding: 1em 2.5rem 0;
+	}
+}
+
+@media(min-width:1000px) {
+	.experience {
+
+		&__leader:hover::after,
+		&__operator:hover::after,
+		&__teacher:hover::after,
+		&__owner:hover::after {
+			content: '';
+			position: absolute;
+			bottom: 0px; //calc(1 * var(--borderWidth));
+			height: var(--borderWidth);
+			width: 100%;
+			background: linear-gradient(90deg, #00000000 40%, #ffffff 50%, #000000 55%, #00000000 70%);
+			border-radius: calc(2 * var(--borderWidth));
+			z-index: 1;
+			-webkit-animation: animationleft 3s ease infinite;
+			animation: animationleft 3s ease infinite;
+			background-size: 300% 300%;
+		}
+
+
+		&__leader p:nth-child(1),
+		&__operator p:nth-child(1),
+		&__teacher p:nth-child(1),
+		&__owner p:nth-child(1) {
+			font-size: 18px;
+		}
+	}
+}
+
+
+
+//up middle--------------------------------------------------------------------------------------------
+.middle {
+	display: flex;
+	flex-direction: column;
+	cursor: none;
+
+	&__abstract {
+		padding: 5rem 5rem 0;
+		flex: 1 1 auto;
+		line-height: 2rem;
+		font-size: 20px;
+	}
+
+	&__abstract h3 {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__skills h3 {
+		font-size: 2rem;
+	}
+}
+
+@media(min-width:1000px) {
+	.pop-up-animation {
+		position: relative;
+		z-index: 20;
+		text-transform: none;
+	}
+
+	.pop-up-animation p:hover {
+		text-transform: capitalize;
+		-webkit-animation: text-pop-up 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		animation: text-pop-up 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	}
+}
+
+@media(max-width:1400px) {
+	.middle {
+		&__abstract {
+			text-align: justify;
+			padding: 2rem 2rem 0;
+		}
+	}
+}
+
+//up middle skill------------------------------------------
+.skill {
+	display: flex;
+	flex-direction: column;
+
+	&__hard-skill,
+	&__soft-skill {
+		display: flex;
+		justify-content: space-evenly;
+		padding: 0 20px;
+		flex-wrap: wrap;
+		margin-bottom: 10px;
+	}
+}
+
+.hard-skill {
+
+	&__appian,
+	&__html,
+	&__css,
+	&__javascript {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 25%;
+		min-width: 10rem;
+		overflow: hidden;
+		z-index: 2;
+		--borderWidth: 0.3rem;
+		position: relative;
+		border-radius: 25px;
+		transition: box-shadow 0.5s ease 0s;
+	}
+
+	&__appian:hover,
+	&__html:hover,
+	&__css:hover,
+	&__javascript:hover {
+		box-shadow: 0 0 15px rgb(255, 255, 255);
+	}
+
+	&__html:hover::after,
+	&__css:hover::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, rgb(255, 255, 255) 15%, #00000000 30%);
+		z-index: -1;
+		-webkit-animation: animationskill 3s ease 1 normal -0.7s forwards;
+		animation: animationskill 3s ease 1 normal -0.7s forwards;
+		background-size: 300% 300%;
+	}
+
+	&__appian:hover::after,
+	&__javascript :hover::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, rgb(255, 255, 255) 15%, #00000000 20%);
+		z-index: -1;
+		-webkit-animation: animationskill 3s ease 1 normal -0.7s forwards;
+		animation: animationskill 3s ease 1 normal -0.7s forwards;
+		background-size: 300% 300%;
+	}
+}
+
+.soft-skill {
+
+	&__english,
+	&__polish,
+	&__ukrainian {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 33.333%;
+		min-width: 10rem;
+		overflow: hidden;
+		z-index: 2;
+		--borderWidth: 0.3rem;
+		position: relative;
+		border-radius: 25px;
+		transition: box-shadow 0.5s ease 0s;
+	}
+
+	&__english:hover,
+	&__polish:hover,
+	&__ukrainian:hover {
+		box-shadow: 0 0 15px rgb(255, 255, 255);
+	}
+
+	&__english:hover::after,
+	&__polish:hover::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, rgb(255, 255, 255) 15%, #00000000 30%, );
+		z-index: -1;
+		-webkit-animation: animationskill 3s ease 1 normal -0.7s forwards;
+		animation: animationskill 3s ease 1 normal -0.7s forwards;
+		background-size: 300% 300%;
+	}
+
+	&__ukrainian :hover::after {
+		content: '';
+		position: absolute;
+		bottom: 0px;
+		right: 0px;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(90deg, rgb(255, 255, 255) 30%, #00000000 40%, );
+		z-index: -1;
+		-webkit-animation: animationskill 3s ease 1 normal -0.7s forwards;
+		animation: animationskill 3s ease 1 normal -0.7s forwards;
+		background-size: 300% 300%;
+	}
+}
+
+//up works----------------------------------------------------------------------------
+.works {
+
+	&__traveler,
+	&__music,
+	&__game,
+	&__Aston-Martin {
+		border-left: 1px solid white;
+		border-bottom: 1px solid white;
+		padding-top: 1rem;
+		transition: all 1s ease 0s;
+		overflow: hidden;
+		--borderWidth: 0.3rem;
+		position: relative;
+		border-radius: calc(5 *var(--borderWidth));
+	}
+
+	&__traveler {
+		order: 4;
+	}
+
+	&__music {
+		order: 3;
+	}
+
+	&__game {
+		order: 2;
+	}
+
+	&__Aston-Martin {
+		order: 1;
+	}
+
+
+
+	&__traveler p:last-child,
+	&__music p:last-child,
+	&__game p:last-child,
+	&__Aston-Martin p:last-child {
+		padding-bottom: 1em;
+	}
+
+	&__traveler:hover,
+	&__music:hover,
+	&__game:hover,
+	&__Aston-Martin:hover {
+		font-size: 16px;
+		line-height: 1.2rem;
+	}
+
+	&__traveler p:nth-child(1),
+	&__music p:nth-child(1),
+	&__game p:nth-child(1),
+	&__Aston-Martin p:nth-child(1) {
+		font-size: 18px;
+	}
+
+	&__traveler p:nth-child(1),
+	&__traveler p:nth-child(2),
+	&__music p:nth-child(1),
+	&__music p:nth-child(2),
+	&__game p:nth-child(1),
+	&__game p:nth-child(2),
+	&__Aston-Martin p:nth-child(1),
+	&__Aston-Martin p:nth-child(2) {
+		padding: 0 0.8em 0.8em;
+		font-family: "Fira Sans";
+		font-weight: 700;
+		text-align: right;
+	}
+
+	&__traveler p,
+	&__music p,
+	&__game p,
+	&__Aston-Martin p {
+		padding: 1em 2.5rem 0;
+	}
+}
+
+@media(min-width:1000px) {
+	.works {
+
+		&__traveler:hover::after,
+		&__music:hover::after,
+		&__game:hover::after,
+		&__Aston-Martin:hover::after {
+			content: '';
+			position: absolute;
+			bottom: 0px; //calc(1 * var(--borderWidth));
+			height: var(--borderWidth);
+			width: 100%;
+			background: linear-gradient(90deg, #00000000 30%, #000000 40%, #ffffff 45%, #00000000 60%);
+			border-radius: calc(2 * var(--borderWidth));
+			z-index: 1;
+			-webkit-animation: animationright 3s ease infinite;
+			animation: animationright 3s ease infinite;
+			background-size: 300% 300%;
+		}
+
+		&__traveler p:nth-child(2),
+		&__music p:nth-child(2),
+		&__game p:nth-child(2),
+		&__Aston-Martin p:nth-child(2) {
+			font-size: 18px;
+		}
+	}
+}
+
+//down--------------------------------------------------------------------------------------------
+.down {
+	display: flex;
+	flex-direction: column;
+
+	&__education,
+	&__courses,
+	&__additional-information {
+		flex: 1 1 33.333%;
+		overflow: hidden;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+		border-radius: 25px;
+		transition: all 1s ease 0s;
+	}
+
+	&__education:hover,
+	&__courses:hover,
+	&__additional-information:hover {
+		flex: 1 1 80%;
+	}
+}
+
+@media(min-width:1000px) {
+	.down {
+		display: flex;
+		flex-direction: row;
+
+
+		&__education,
+		&__courses,
+		&__additional-information {
+			flex: 1 1 33.333%;
+			overflow: hidden;
+			border-top: 1px solid white;
+			border-bottom: 1px solid white;
+			border-radius: 25px;
+			transition: all 1s ease 0s;
+		}
+
+		&__education:hover,
+		&__courses:hover,
+		&__additional-information:hover {
+			flex: 1 1 80%;
+		}
+	}
+}
+
+.down p {
+	padding: 0.5rem 2.5rem;
+	line-height: 1.5rem;
+}
+
+@media(max-width:1400px) {
+	.down p {
+		padding: 0.2rem 1rem;
+		line-height: 1.5rem;
+	}
+}
+
+.down a {
+	font-size: 1.2rem;
+}
+
+//footer---------------------------------------------------------------
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.9rem;
+	padding: 3rem 0 0;
+	line-height: 1.5rem;
+	text-align: center;
+}
+
+//cursor-------------------------------------------------------------
+.cursor-pointer {
+	content: '';
+	position: absolute;
+	z-index: 10;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	opacity: 1;
+
+	-webkit-animation: animationpointer 3s ease-out infinite;
+	animation: animationpointer 3s ease-out infinite;
+}
+
+//preloader--------------------------------------------------------------------
+
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	z-index: 1001;
+}
+
+.preloader__row {
+	position: relative;
+	top: 50vh;
+	left: 50vw;
+	width: 100px;
+	height: 100px;
+	transform: translate(-50%, -50%);
+
+}
+
+.preloader__item img {
+	width: 20rem;
+	transform: scale(0.8);
+	animation: preloader-bounce 5s infinite ease-in-out;
+}
+
+.loaded_hiding .preloader {
+	transition: 0.3s opacity;
+	opacity: 0;
+}
+
+.loaded .preloader {
+	display: none;
+}
+
+.spinner {
+	background-image: linear-gradient(rgb(0, 0, 0) 35%, rgb(0, 0, 0));
+	width: 100px;
+	height: 100px;
+	animation: spinning82341 1.7s linear infinite;
+	text-align: center;
+	border-radius: 50px;
+	filter: blur(1px);
+	box-shadow: 0px -5px 20px 0px rgb(0, 0, 0), 0px 5px 20px 0px rgb(250, 250, 250);
+}
+
+.spinner1 {
+	background-color: rgb(0, 0, 0);
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	filter: blur(10px);
+}
+
+//--------------------------------------------------------------------------------------------
