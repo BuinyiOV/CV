@@ -341,7 +341,6 @@ middle.addEventListener("mousemove", function cursor(event) {
   pointer.classList.add("cursor-pointer");
 
   function pointerDelete(pointer) {
-    console.log("text");
     pointer.remove();
     setTimeout(pointerDelete, 2000, pointer);
   }

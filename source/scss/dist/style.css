@@ -549,6 +549,15 @@ h6 {
   box-shadow: 0 0 15px #ffffff, 0 0 15px #ffffff, 0 0 5px #ffffff;
 }
 
+@media (max-width: 600px) {
+  .items__red, .items__yellow, .items__green, .items__blue, .items__pink, .items__mono {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    transition: all 1s ease 0s;
+  }
+}
 .red {
   background-color: #ee0000;
 }
@@ -612,6 +621,11 @@ body {
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .container {
+    padding-left: 4rem;
+  }
+}
 h3 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -688,8 +702,6 @@ span {
   text-shadow: 0 0 15px white, 0 0 15px white;
   transition: all 1s ease 0s;
   letter-spacing: 0.02em;
-  -webkit-animation: animationname 15s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
-  animation: animationname 15s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
 }
 .header__contact {
   flex: 1 0 auto;
@@ -709,6 +721,12 @@ span {
   color: #131313;
 }
 
+@media (min-width: 600px) {
+  .header__name {
+    -webkit-animation: animationname 15s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+    animation: animationname 15s cubic-bezier(0.55, 0.085, 0.68, 0.53) infinite;
+  }
+}
 @media (max-width: 999.98px) {
   .header {
     flex-wrap: wrap;
@@ -841,6 +859,11 @@ span {
   padding: 1em 2.5rem 0;
 }
 
+@media (max-width: 600px) {
+  .experience__leader p, .experience__operator p, .experience__teacher p, .experience__owner p {
+    line-height: 2rem;
+  }
+}
 @media (min-width: 1000px) {
   .experience__leader:hover::after, .experience__operator:hover::after, .experience__teacher:hover::after, .experience__owner:hover::after {
     content: "";
@@ -889,6 +912,11 @@ span {
     text-transform: capitalize;
     -webkit-animation: text-pop-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: text-pop-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}
+@media (max-width: 600px) {
+  .middle__abstract {
+    line-height: 3rem;
   }
 }
 @media (max-width: 1400px) {
@@ -1035,6 +1063,11 @@ span {
   padding: 1em 2.5rem 0;
 }
 
+@media (max-width: 600px) {
+  .works__traveler p, .works__music p, .works__game p, .works__Aston-Martin p {
+    line-height: 2rem;
+  }
+}
 @media (min-width: 1000px) {
   .works__traveler:hover::after, .works__music:hover::after, .works__game:hover::after, .works__Aston-Martin:hover::after {
     content: "";
@@ -1095,6 +1128,11 @@ span {
   .down p {
     padding: 0.2rem 1rem;
     line-height: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .down p {
+    line-height: 2.5rem;
   }
 }
 .down a {

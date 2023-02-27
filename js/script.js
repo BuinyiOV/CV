@@ -249,7 +249,6 @@ pointer.style.left = pointerX;
 pointer.classList.add(`cursor-pointer`);
 
 function pointerDelete (pointer){
-	console.log(`text`);
 	pointer.remove ();
 	setTimeout (pointerDelete, 2000, pointer);
 };
