@@ -781,11 +781,11 @@ span {
   margin-bottom: 10px;
 }
 
-.hard-skill__appian, .hard-skill__html, .hard-skill__css, .hard-skill__javascript {
+.hard-skill__appian, .hard-skill__html, .hard-skill__css, .hard-skill__javascript, .hard-skill__scss, .hard-skill__git, .hard-skill__vscode {
   display: flex;
   flex-direction: column;
   flex: 1 1 25%;
-  min-width: 10rem;
+  min-width: 11rem;
   overflow: hidden;
   z-index: 2;
   --borderWidth: 0.3rem;
@@ -793,10 +793,16 @@ span {
   border-radius: 25px;
   transition: box-shadow 0.5s ease 0s;
 }
-.hard-skill__appian:hover, .hard-skill__html:hover, .hard-skill__css:hover, .hard-skill__javascript:hover {
+.hard-skill__appian, .hard-skill__html, .hard-skill__css, .hard-skill__javascript {
+  flex: 1 1 25%;
+}
+.hard-skill__scss, .hard-skill__git, .hard-skill__vscode {
+  flex: 1 1 33.333%;
+}
+.hard-skill__appian:hover, .hard-skill__html:hover, .hard-skill__css:hover, .hard-skill__javascript:hover, .hard-skill__scss:hover, .hard-skill__git:hover, .hard-skill__vscode:hover {
   box-shadow: 0 0 15px rgb(255, 255, 255);
 }
-.hard-skill__html:hover::after, .hard-skill__css:hover::after {
+.hard-skill__html:hover::after, .hard-skill__css:hover::after, .hard-skill__scss:hover::after, .hard-skill__git:hover::after, .hard-skill__vscode:hover::after {
   content: "";
   position: absolute;
   bottom: 0px;

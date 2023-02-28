@@ -491,11 +491,14 @@ span {
 	&__appian,
 	&__html,
 	&__css,
-	&__javascript {
+	&__javascript,
+	&__scss,
+	&__git,
+	&__vscode {
 		display: flex;
 		flex-direction: column;
 		flex: 1 1 25%;
-		min-width: 10rem;
+		min-width: 11rem;
 		overflow: hidden;
 		z-index: 2;
 		--borderWidth: 0.3rem;
@@ -504,15 +507,34 @@ span {
 		transition: box-shadow 0.5s ease 0s;
 	}
 
+	&__appian,
+	&__html,
+	&__css,
+	&__javascript {
+		flex: 1 1 25%;
+	}
+
+	&__scss,
+	&__git,
+	&__vscode {
+		flex: 1 1 33.333%;
+	}
+
 	&__appian:hover,
 	&__html:hover,
 	&__css:hover,
-	&__javascript:hover {
+	&__javascript:hover,
+	&__scss:hover,
+	&__git:hover,
+	&__vscode:hover {
 		box-shadow: 0 0 15px rgb(255, 255, 255);
 	}
 
 	&__html:hover::after,
-	&__css:hover::after {
+	&__css:hover::after,
+	&__scss:hover::after,
+	&__git:hover::after,
+	&__vscode:hover::after {
 		content: '';
 		position: absolute;
 		bottom: 0px;
