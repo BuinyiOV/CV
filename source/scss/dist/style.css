@@ -755,13 +755,17 @@ span {
   color: #ca030300;
   font-size: 0;
   text-shadow: 0 0 15px white, 0 0 15px white, 0 0 5px white;
+  letter-spacing: 1px;
 }
 .contact__phone, .contact__mail {
-  transition: all 1s ease 0s;
+  transition: all 1s ease 0.5s;
 }
-.contact__phone:focus, .contact__mail:focus, .contact__linkdin:focus, .contact__git:focus {
+.contact__phone:focus, .contact__phone:hover, .contact__mail:focus, .contact__mail:hover, .contact__linkdin:focus, .contact__linkdin:hover, .contact__git:focus, .contact__git:hover {
   color: white;
   font-size: 16px;
+}
+.contact__phone:focus, .contact__phone:hover, .contact__mail:focus, .contact__mail:hover {
+  transition: all 1s ease 0s;
 }
 
 .contact img {

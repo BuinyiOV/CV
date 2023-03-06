@@ -203,20 +203,32 @@ span {
 		color: #ca030300;
 		font-size: 0;
 		text-shadow: 0 0 15px white, 0 0 15px white, 0 0 5px white;
+		letter-spacing: 1px;
 	}
 
 	&__phone,
 	&__mail {
-		transition: all 1s ease 0s;
+		transition: all 1s ease 0.5s;
 	}
 
 
 	&__phone:focus,
+	&__phone:hover,
 	&__mail:focus,
+	&__mail:hover,
 	&__linkdin:focus,
-	&__git:focus {
+	&__linkdin:hover,
+	&__git:focus,
+	&__git:hover {
 		color: white;
 		font-size: 16px;
+	}
+
+	&__phone:focus,
+	&__phone:hover,
+	&__mail:focus,
+	&__mail:hover {
+		transition: all 1s ease 0s;
 	}
 }
 
@@ -225,6 +237,7 @@ span {
 	filter: drop-shadow(#ffffff 0px 0px 3px);
 	transition: all 1s ease 0s;
 }
+
 
 @media(min-width:300px) {
 	.contact img {
